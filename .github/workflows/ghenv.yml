@@ -14,4 +14,4 @@ jobs:
         run: |
           echo $MY_VAR
       - name: Print env
-          env
+        run: env
