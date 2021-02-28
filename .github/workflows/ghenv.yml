@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Set a variable
+        run: echo "MY_VAR=`date`" >> $GITHUB_ENV
+      - name: Run a multi-line script
+        run: |
+          echo $MY_VAR
+          echo $GITHUB_WORKSPACE
